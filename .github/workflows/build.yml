@@ -22,6 +22,7 @@ jobs:
     steps:
       - name: Download
         run: |
+          wget http://archive.ubuntu.com/ubuntu/pool/universe/g/gcc-5-cross/gcc-5-cross-base_5.5.0-12ubuntu1cross1_all.deb
           wget http://archive.ubuntu.com/ubuntu/pool/universe/g/gcc-5-cross/libhfubsan0-armel-cross_5.3.1-14ubuntu2cross1_all.deb
           wget http://archive.ubuntu.com/ubuntu/pool/universe/g/gcc-5-cross/libhfgcc-5-dev-armel-cross_5.3.1-14ubuntu2cross1_all.deb 
           wget http://archive.ubuntu.com/ubuntu/pool/universe/g/gcc-5-cross/libhfstdc++-5-dev-armel-cross_5.3.1-14ubuntu2cross1_all.deb
@@ -38,6 +39,7 @@ jobs:
           wget http://archive.ubuntu.com/ubuntu/pool/universe/g/gcc-5-cross/g++-5-arm-linux-gnueabi_5.3.1-14ubuntu2cross1_amd64.deb
       - name: Install
         run: |
+          sudo apt install ./gcc-5-cross-base_5.5.0-12ubuntu1cross1_all.deb -y
           sudo apt install ./libhfubsan0-armel-cross_5.3.1-14ubuntu2cross1_all.deb -y
           sudo apt install ./libhfgcc-5-dev-armel-cross_5.3.1-14ubuntu2cross1_all.deb  -y
           sudo apt install ./libhfstdc++-5-dev-armel-cross_5.3.1-14ubuntu2cross1_all.deb -y
