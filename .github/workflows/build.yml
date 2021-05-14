@@ -29,7 +29,6 @@ jobs:
           wget http://archive.ubuntu.com/ubuntu/pool/universe/g/gcc-5-cross/libgcc-5-dev-armel-cross_5.3.1-14ubuntu2cross1_all.deb
           wget http://archive.ubuntu.com/ubuntu/pool/universe/g/gcc-5-cross/libstdc++-5-dev-armel-cross_5.3.1-14ubuntu2cross1_all.deb
           wget http://archive.ubuntu.com/ubuntu/pool/universe/g/gcc-5-cross/libhfstdc++-5-dev-armel-cross_5.3.1-14ubuntu2cross1_all.deb
-          wget http://archive.ubuntu.com/ubuntu/pool/universe/g/gcc-5-cross/libhfasan2-armel-cross_5.3.1-14ubuntu2cross1_all.deb
           wget http://archive.ubuntu.com/ubuntu/pool/universe/g/gcc-5-cross/gcc-5-multilib-arm-linux-gnueabi_5.3.1-14ubuntu2cross1_amd64.deb
           wget http://archive.ubuntu.com/ubuntu/pool/universe/g/gcc-5-cross/g++-5-multilib-arm-linux-gnueabi_5.3.1-14ubuntu2cross1_amd64.deb
           wget http://archive.ubuntu.com/ubuntu/pool/universe/g/gcc-5-cross/gcc-5-arm-linux-gnueabi-base_5.3.1-14ubuntu2cross1_amd64.deb
@@ -38,7 +37,6 @@ jobs:
           wget http://archive.ubuntu.com/ubuntu/pool/universe/g/gcc-5-cross/libasan2-armel-cross_5.3.1-14ubuntu2cross1_all.deb
           wget http://archive.ubuntu.com/ubuntu/pool/universe/g/gcc-5-cross/libgcc-5-dev-armel-cross_5.3.1-14ubuntu2cross1_all.deb
           wget http://archive.ubuntu.com/ubuntu/pool/universe/g/gcc-5-cross/gcc-5-arm-linux-gnueabi_5.3.1-14ubuntu2cross1_amd64.deb
-          wget http://archive.ubuntu.com/ubuntu/pool/universe/g/gcc-5-cross/libstdc++-5-dev-armel-cross_5.3.1-14ubuntu2cross1_all.deb
           wget http://archive.ubuntu.com/ubuntu/pool/universe/g/gcc-5-cross/g++-5-arm-linux-gnueabi_5.3.1-14ubuntu2cross1_amd64.deb
           wget http://archive.ubuntu.com/ubuntu/pool/universe/i/isl-0.18/libisl15_0.18-4_amd64.deb
           wget http://ftp.br.debian.org/debian/pool/main/m/mpfr4/libmpfr4_3.1.5-1_amd64.deb
@@ -53,7 +51,6 @@ jobs:
           sudo apt install ./libgcc-5-dev-armel-cross_5.3.1-14ubuntu2cross1_all.deb -y
           sudo apt install ./libstdc++-5-dev-armel-cross_5.3.1-14ubuntu2cross1_all.deb -y
           sudo apt install ./libhfstdc++-5-dev-armel-cross_5.3.1-14ubuntu2cross1_all.deb -y
-          sudo apt install ./libhfasan2-armel-cross_5.3.1-14ubuntu2cross1_all.deb -y
           sudo apt install ./gcc-5-arm-linux-gnueabi-base_5.3.1-14ubuntu2cross1_amd64.deb -y
           sudo apt install ./libisl15_0.18-4_amd64.deb -y
           sudo apt install ./libmpfr4_3.1.5-1_amd64.deb -y
@@ -62,8 +59,9 @@ jobs:
           sudo apt install ./gcc-5-multilib-arm-linux-gnueabi_5.3.1-14ubuntu2cross1_amd64.deb -y
           sudo apt install ./g++-5-arm-linux-gnueabi_5.3.1-14ubuntu2cross1_amd64.deb -y
           sudo apt install ./g++-5-multilib-arm-linux-gnueabi_5.3.1-14ubuntu2cross1_amd64.deb -y
-          sudo apt install ./libstdc++-5-dev-armel-cross_5.3.1-14ubuntu2cross1_all.deb -y
       - name: Check
         run: |
+          which arm-linux-gnueabi-gcc-5
           arm-linux-gnueabi-gcc-5 -v
+          which arm-linux-gnueabi-g++-5
           arm-linux-gnueabi-g++-5 -v
